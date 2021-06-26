@@ -1,0 +1,24 @@
+// the default is for bigger screen size, the website is designed from Desktop to Mobile
+$small-fnt: 0.75rem; // equal to 12px
+$detail-fnt: 0.875rem; // equal to 14px
+$body-fnt: 1rem; // equal to 16px (default)
+$subhead-fnt: 1.125rem; // equal to 18px
+$head-fnt: 1.5rem; // equal to 24px
+
+// The size is for mobile, will applied if screen < 568px
+$phn-small-fnt: 0.625rem; // equal to 12px
+$phn-paragraph-fnt: 0.75rem; // equal to 14px
+$phn-subheading-fnt: 1rem; // equal to 16px (default)
+$phn-heading-fnt: 1.25rem; // equal to 18px
+
+// prefer dark color first
+$primary-clr: hsl(210, 96%, 40%);
+$body-clr: hsl(210, 10%, 12%);
+$container-clr: hsl(210, 10%, 18%);
+$upper-layer-clr: hsl(210, 10%, 24%);
+$dope-clr: hsl(210, 10%, 16%);
+$head-clr: hsl(210, 10%, 80%);
+$paragraph-clr: hsl(210, 10%, 75%);
+
+// other variables
+$transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
