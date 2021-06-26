@@ -1,0 +1,32 @@
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@mixin flexRowAllCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexRowBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexRowEvenly {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+// mixin column start
+@mixin flexColAllCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
