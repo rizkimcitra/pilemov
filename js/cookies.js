@@ -57,7 +57,7 @@ function setElementHero() {
             </div>
             <div class="description">
                 <h5 class="header">Hello! thank you for your visit!</h5>
-                <p>Im Rizki Maulana Citra, the person who made this project! let's connect to my social media!</p>
+                <p>Im Rizki Maulana Citra, the person who made this project. Get in touch with me!</p>
                 <div class="social__list">
                     <a href="https://github.com/mlnzyx">
                     <img src="./icons/github-icon.svg"/>
