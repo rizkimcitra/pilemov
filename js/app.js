@@ -104,12 +104,12 @@ function updateUIDetail(m) {
 }
 
 function getMovies(keyword) {
-  return fetch("http://www.omdbapi.com/?apikey=925caaea&s=" + keyword)
+  return fetch("https://www.omdbapi.com/?apikey=925caaea&s=" + keyword)
     .then((r) => r.json())
     .then((r) => r.Search);
 }
 function getMovieDetail(imdbid) {
-  return fetch("http://www.omdbapi.com/?apikey=925caaea&i=" + imdbid)
+  return fetch("https://www.omdbapi.com/?apikey=925caaea&i=" + imdbid)
     .then((r) => r.json())
     .then((m) => m);
 }
@@ -144,9 +144,3 @@ function showMovieDetail(m) {
             <li><button class="close__modal">Close</button></li>
           </ul>`;
 }
-
-const switcher = document.querySelector(".switcher");
-switcher.addEventListener("click", function () {
-  body.classList.toggle("lightMode");
-  this.classList.toggle("switched");
-});
