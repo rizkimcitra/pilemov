@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global Meta Tag start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="R. Maulana Citra" />
+    <meta name="copyright" content="MIT" />
+    <meta name="robots" content="index, follow" />
+    <meta name="rating" content="general" />
+    <!-- Global Meta Tag end -->
+
+    <!-- Primary Meta Tags -->
+    <title>PileMov - JSMovieApp</title>
+    <meta name="title" content="PileMov - JSMovieApp" />
+    <meta
+      name="description"
+      content="PileMov is a web-based application that provides information about the Movie you are looking for! PileMov provides information from the OMDB API. PileMov is built with Vanilla JavaScript and SASS. You can use this project or just a case study for practicing JavaScript about Async / Await, Fetch, and Callback Functions."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pilemov.vercel.app/" />
+    <meta property="og:title" content="PileMov - JSMovieApp" />
+    <meta
+      property="og:description"
+      content="PileMov is a web-based application that provides information about the Movie you are looking for! PileMov provides information from the OMDB API. PileMov is built with Vanilla JavaScript and SASS. You can use this project or just a case study for practicing JavaScript about Async / Await, Fetch, and Callback Functions."
+    />
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://pilemov.vercel.app/" />
+    <meta property="twitter:title" content="PileMov - JSMovieApp" />
+    <meta
+      property="twitter:description"
+      content="PileMov is a web-based application that provides information about the Movie you are looking for! PileMov provides information from the OMDB API. PileMov is built with Vanilla JavaScript and SASS. You can use this project or just a case study for practicing JavaScript about Async / Await, Fetch, and Callback Functions."
+    />
+    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+
+    <!-- stylesheet,cdn, etc. start -->
+    <link rel="stylesheet" href="./style/app.css" />
+    <link rel="shortcut icon" href="./icons/javascript-logo.svg" type="image/x-icon" />
+    <!-- stylesheet,cdn, etc. end -->
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <!-- Header Content -->
+      <div class="header__content">
+        <!-- Form that will request to API -->
+        <form action="" id="search__movies">
+          <!-- Custom Search bar start -->
+          <div class="search__bar">
+            <input type="text" id="search" placeholder="Search a Movie" />
+            <button type="submit" id="btn__search"></button>
+          </div>
+          <!-- Custom Search bar start end -->
+        </form>
+
+        <!-- info icon start -->
+        <div class="content__info">
+          <span class="info__btn"></span>
+        </div>
+        <!-- info icon end -->
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Sidebar start -->
+    <aside class="sidebar">
+      <!-- Sidebar Header -->
+      <div class="sidebar__header">
+        <h5 class="heading">Information</h5>
+      </div>
+
+      <!-- Sidebar Desdription start -->
+      <div class="sidebar__description">
+        <p>
+          This project uses Vanilla JavaScript, SASS, and using the API from <a href="https://omdbapi.com/">OMDB API</a>, this project can display information about the Movies you are looking for!. This is also open source, you can see it
+          <a href="">here.</a>
+        </p>
+      </div>
+      <!-- Sidebar Desdription end -->
+
+      <!-- section used for providing additional information -->
+      <div class="sidebar__help">
+        <p><span>How to use this website?</span>You can find information about a Movie by providing the title that you are looking for on the search bar.</p>
+
+        <br />
+        <p class="fact">If you're looking for Anime, they might be show up, but you might couldn't find old title Anime.</p>
+      </div>
+
+      <!-- <span class="switcher"></span> -->
+    </aside>
+    <!-- Sidebar end -->
+
+    <!-- Main Start -->
+    <main class="mainArea">
+      <div class="container">
+        <!-- A bit text -->
+        <div class="container__description">
+          <p>Want to know more about your favorite Movie?</p>
+        </div>
+        <div class="container__movies">
+          <!-- Container for movie list -->
+          <div class="movies">
+            <!-- A header -->
+            <h3 class="heading">Search <span class="iter">Movies</span></h3>
+
+            <div class="movies__list">
+              <p class="greet">Your Movie List Will Goes Here 😎</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main End -->
+
+    <!-- Modal start -->
+    <div class="modal">
+      <!-- Create a backdrop effect -->
+      <div class="modal__backdrop">
+        <!-- Modal container or body
+          the content will be provided by javascript later
+         -->
+        <div class="modal__container"></div>
+        <!-- Modal container end -->
+      </div>
+      <!-- modal backdrop end -->
+    </div>
+    <!-- Modal End -->
+    <script src="./js/app.js"></script>
+    <script src="./js/cookies.js"></script>
+  </body>
+</html>
