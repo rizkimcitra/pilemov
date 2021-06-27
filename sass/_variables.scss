@@ -1,4 +1,4 @@
-// the default is for bigger screen size, the website is designed from Desktop to Mobile
+// the default is for bigger screen size, the website is designed from Desktop to Mobile or smaller screen
 $small-fnt: 0.75rem; // equal to 12px
 $detail-fnt: 0.875rem; // equal to 14px
 $body-fnt: 1rem; // equal to 16px (default)
@@ -19,6 +19,17 @@ $upper-layer-clr: hsl(210, 10%, 24%);
 $dope-clr: hsl(210, 10%, 16%);
 $head-clr: hsl(210, 10%, 80%);
 $paragraph-clr: hsl(210, 10%, 75%);
+$btn-text-clr: hsl(210, 10%, 75%);
+
+// Light Mode
+$lm-primary-clr: hsl(210, 96%, 50%);
+$lm-body-clr: hsl(210, 10%, 90%);
+$lm-container-clr: hsl(210, 10%, 99%);
+$lm-upper-layer-clr: hsl(210, 10%, 88%);
+$lm-dope-clr: hsl(0, 0%, 92%);
+$lm-head-clr: hsl(210, 10%, 10%);
+$lm-paragraph-clr: hsl(210, 10%, 5%);
+$lm-btn-text-clr: hsl(210, 10%, 95%);
 
 // other variables
 $transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
