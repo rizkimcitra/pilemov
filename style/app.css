@@ -191,7 +191,7 @@ header.shifted {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.675);
-  position: absolute;
+  position: fixed;
   z-index: 94;
   top: 0;
   cursor: pointer;
