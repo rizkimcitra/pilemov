@@ -4,7 +4,7 @@ const body = document.body;
 const infoBtn = document.querySelector(".content__info");
 // initialize ( info icon ) that assigned to infoBtn
 
-infoBtn.addEventListener("click", function () {
+infoBtn.addEventListener("click", function (e) {
   // infoBtn got an event click then run the function
   this.classList.toggle("shifted");
   // the infoBtn has added a new class shifted
@@ -21,6 +21,12 @@ infoBtn.addEventListener("click", function () {
   main.classList.toggle("shifted");
   // get a element main and assigned it to variable main
   // and then main will have toggle class named shifted
+
+  const searchBar = document.querySelector(".search__bar");
+  searchBar.classList.toggle("hidden");
+
+  const asideBackdrop = document.querySelector(".aside__backdrop");
+  asideBackdrop.classList.toggle("hidden");
 });
 
 const modalArea = document.querySelector(".modal");
@@ -68,8 +74,24 @@ body.addEventListener("click", async function (e) {
     updateUIDetail(movieDetail);
     // call updateUIDetail function that carried data from movie detail
   }
+
   if (e.target.className === "bannerHero__backdrop" || e.target.className === "close") {
     document.querySelector(".bannerHero").remove();
+  }
+
+  const asideBackdrop = document.querySelector(".aside__backdrop");
+  if (e.target.className === asideBackdrop.className) {
+    const sidebar = document.querySelector(".sidebar");
+    const main = document.querySelector("main");
+    const header = document.querySelector("header");
+    const searchBar = document.querySelector(".search__bar");
+
+    infoBtn.classList.remove("shifted");
+    asideBackdrop.classList.remove("hidden");
+    header.classList.remove("shifted");
+    sidebar.classList.remove("shifted");
+    main.classList.remove("shifted");
+    searchBar.classList.remove("hidden");
   }
 });
 const searchMovie = document.getElementById("search__movies");
@@ -104,12 +126,12 @@ function updateUIDetail(m) {
 }
 
 function getMovies(keyword) {
-  return fetch("https://www.omdbapi.com/?apikey=925caaea&s=" + keyword)
+  return fetch("http://www.omdbapi.com/?apikey=925caaea&s=" + keyword)
     .then((r) => r.json())
     .then((r) => r.Search);
 }
 function getMovieDetail(imdbid) {
-  return fetch("https://www.omdbapi.com/?apikey=925caaea&i=" + imdbid)
+  return fetch("http://www.omdbapi.com/?apikey=925caaea&i=" + imdbid)
     .then((r) => r.json())
     .then((m) => m);
 }
