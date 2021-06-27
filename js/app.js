@@ -27,6 +27,8 @@ infoBtn.addEventListener("click", function (e) {
 
   const asideBackdrop = document.querySelector(".aside__backdrop");
   asideBackdrop.classList.toggle("hidden");
+  
+  body.classList.toggle('modalIsOpen');
 });
 
 const modalArea = document.querySelector(".modal");
@@ -92,6 +94,7 @@ body.addEventListener("click", async function (e) {
     sidebar.classList.remove("shifted");
     main.classList.remove("shifted");
     searchBar.classList.remove("hidden");
+    body.classList.remove('modalIsOpen');
   }
 });
 const searchMovie = document.getElementById("search__movies");
