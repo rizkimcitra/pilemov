@@ -27,8 +27,6 @@ infoBtn.addEventListener("click", function (e) {
 
   const asideBackdrop = document.querySelector(".aside__backdrop");
   asideBackdrop.classList.toggle("hidden");
-  
-  body.classList.toggle('modalIsOpen');
 });
 
 const modalArea = document.querySelector(".modal");
@@ -94,9 +92,9 @@ body.addEventListener("click", async function (e) {
     sidebar.classList.remove("shifted");
     main.classList.remove("shifted");
     searchBar.classList.remove("hidden");
-    body.classList.remove('modalIsOpen');
   }
 });
+
 const searchMovie = document.getElementById("search__movies");
 searchMovie.addEventListener("submit", async function (e) {
   const inputKeyword = document.getElementById("search");
@@ -169,3 +167,9 @@ function showMovieDetail(m) {
             <li><button class="close__modal">Close</button></li>
           </ul>`;
 }
+
+const switcher = document.querySelector(".switcher");
+switcher.addEventListener("click", function () {
+  body.classList.toggle("lightMode");
+  this.classList.toggle("switched");
+});
