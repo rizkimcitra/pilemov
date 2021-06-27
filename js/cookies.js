@@ -1,36 +1,47 @@
 function setCookie(c_name, value, exdays) {
+  
   var exdate = new Date();
   exdate.setDate(exdate.getDate() + exdays);
+  
   var c_value = escape(value) + (exdays == null ? "" : "; expires=" + exdate.toUTCString());
   document.cookie = c_name + "=" + c_value;
 }
 
 function getCookie(c_name) {
+  
   var c_value = document.cookie;
   var c_start = c_value.indexOf(" " + c_name + "=");
+  
   if (c_start == -1) {
     c_start = c_value.indexOf(c_name + "=");
   }
+  
   if (c_start == -1) {
+    
     c_value = null;
   } else {
+    
     c_start = c_value.indexOf("=", c_start) + 1;
     var c_end = c_value.indexOf(";", c_start);
+    
     if (c_end == -1) {
       c_end = c_value.length;
     }
+    
     c_value = unescape(c_value.substring(c_start, c_end));
   }
+  
   return c_value;
 }
 
 checkSession();
 
 function checkSession() {
+  
   var c = getCookie("visited");
-  if (c === "yes") {
-  } else {
-    // body.classList.add("modalIsOpen");
+  
+  if (c !== "yes") {
+    
     const mainArea = document.querySelector("main");
     const banner = document.createElement("div");
     banner.classList.add("bannerHero");
@@ -43,15 +54,15 @@ function checkSession() {
     bannerContainer.innerHTML = setElementHero();
 
     bannerBackdrop.append(bannerContainer);
-
     banner.append(bannerBackdrop);
-
     mainArea.append(banner);
   }
+  
   setCookie("visited", "yes", 7);
 }
 
 function setElementHero() {
+  
   return `<div class="picture">
                 <img src="./img/profile.png" alt="profile">
             </div>
