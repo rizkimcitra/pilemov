@@ -1,11 +1,13 @@
 const body = document.body;
-
 const infoBtn = document.querySelector(".content__info");
 
 infoBtn.addEventListener("click", function (e) {
+  
   this.classList.toggle("shifted");
+  
   const sidebar = document.querySelector(".sidebar");
   sidebar.classList.toggle("shifted");
+  
   const header = document.querySelector("header");
   header.classList.toggle("shifted");
 
@@ -27,9 +29,11 @@ function closeModal(e) {
   const modalArea = document.querySelector(".modal__container");
 
   if (e.target.className === backdropModal.className || e.target.className === btnCloseModal.className) {
+    
     this.classList.remove("show");
     modalArea.classList.remove("show");
     body.classList.remove("modalIsOpen");
+    
   }
 }
 modalArea.addEventListener("click", closeModal);
@@ -37,6 +41,7 @@ modalArea.addEventListener("click", closeModal);
 body.addEventListener("click", async function (e) {
 
   if (e.target.classList.contains("btn__detail")) {
+    
     const modalContainer = document.querySelector(".modal__container");
     modalArea.classList.add("show");
     modalContainer.classList.add("show");
@@ -48,11 +53,14 @@ body.addEventListener("click", async function (e) {
   }
 
   if (e.target.className === "bannerHero__backdrop" || e.target.className === "close") {
+    
     document.querySelector(".bannerHero").remove();
   }
 
   const asideBackdrop = document.querySelector(".aside__backdrop");
+  
   if (e.target.className === asideBackdrop.className) {
+    
     const sidebar = document.querySelector(".sidebar");
     const main = document.querySelector("main");
     const header = document.querySelector("header");
@@ -69,22 +77,25 @@ body.addEventListener("click", async function (e) {
 
 const searchMovie = document.getElementById("search__movies");
 searchMovie.addEventListener("submit", async function (e) {
+  
   const inputKeyword = document.getElementById("search");
   e.preventDefault();
 
   const movies = await getMovies(inputKeyword.value);
-
   if (movies === undefined) {
+    
     const container = document.querySelector(".movies__list");
     let greet = `<p>hmm🤔, couldn't find that Movies, TV Series or Animes, try another title!</p>`;
-
     container.innerHTML = greet;
+    
   } else {
+    
     updateUI(movies);
   }
 });
 
 function updateUI(movies) {
+  
   let cards = "";
   movies.forEach((m) => (cards += showCards(m)));
 
@@ -93,17 +104,20 @@ function updateUI(movies) {
 }
 
 function updateUIDetail(m) {
+  
   const movieDetail = showMovieDetail(m);
   const modalBody = document.querySelector(".modal__container");
   modalBody.innerHTML = movieDetail;
 }
 
 function getMovies(keyword) {
+  
   return fetch("https://www.omdbapi.com/?apikey=925caaea&s=" + keyword)
     .then((r) => r.json())
     .then((r) => r.Search);
 }
 function getMovieDetail(imdbid) {
+  
   return fetch("https://www.omdbapi.com/?apikey=925caaea&i=" + imdbid)
     .then((r) => r.json())
     .then((m) => m);
@@ -139,6 +153,7 @@ function showMovieDetail(m) {
 
 const switcher = document.querySelector(".switcher");
 switcher.addEventListener("click", function () {
+  
   body.classList.toggle("lightMode");
   this.classList.toggle("switched");
 });
