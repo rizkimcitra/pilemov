@@ -63,10 +63,7 @@ function checkSession() {
 
 function setElementHero() {
   
-  return `<div class="picture">
-                <img src="./img/profile.png" alt="profile">
-            </div>
-            <div class="description">
+  return `<div class="description">
                 <h5 class="header">Hello! thank you for your visit!</h5>
                 <p>Im Rizki Maulana Citra, the person who made this project. Get in touch with me!</p>
                 <div class="social__list">
